@@ -31,17 +31,27 @@ Inject as a [AngularJS Service](http://docs.angularjs.org/guide/dev_guide.servic
 ```javascript
 // Injected into controller
 angular.module('someModule').controller('SomeCtrl', function ($scope, linkify, $sce) {
-  var text = "@scottcorgan and http://github.com";
+  var text = "@keebits #keebits and http://www.keebits.de";
   
   // Twitter
   // Must use $sce.trustAsHtml() as of Angular 1.2.x
   $scope.text = $sce.trustAsHtml(linkify.twitter(text));
-  // outputs: <a href="https://twitter.com/scottcorgan" target="_blank">scottcorgan</a> and <a href="http://github.com" target="_blank">http://github.com</a>
+  // outputs: <a href="https://twitter.com/keebits" target="_blank">keebits</a> <a href="https://twitter.com/hashtag/keebits?src=hash">keebits</a> and <a href="http://www.keebits.de" target="_blank">www.keebits.de</a>
   
   // Github
   // Must use $sce.trustAsHtml() as of Angular 1.2.x
   $scope.text = $sce.trustAsHtml(linkify.github(text));
-  // outputs: <a href="https://github.com/scottcorgan" target="_blank">scottcorgan</a> and <a href="http://github.com" target="_blank">http://github.com</a>
+  // outputs: <a href="https://github.com/keebits" target="_blank">keebits</a> #keebits and <a href="http://www.keebits.de" target="_blank">www.keebits.de</a>
+
+  // Facebook
+  // Must use $sce.trustAsHtml() as of Angular 1.2.x
+  $scope.text = $sce.trustAsHtml(linkify.facebook(text));
+  // outputs: <a href="https://www.facebook.com/keebits" target="_blank">keebits</a> <a href="https://www.facebook.com/hashtag/keebits">keebits</a> and <a href="http://www.keebits.de" target="_blank">www.keebits.de</a>
+
+  // Instagram
+  // Must use $sce.trustAsHtml() as of Angular 1.2.x
+  $scope.text = $sce.trustAsHtml(linkify.github(text));
+  // outputs: <a href="https://instagram.com/keebits" target="_blank">keebits</a> #keebits and <a href="http://www.keebits.de" target="_blank">www.keebits.de</a>
   
 });
 
