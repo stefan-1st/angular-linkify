@@ -1,6 +1,7 @@
 # angular-linkify
 
 Angular filter, directive, and service to linkify text. As of **v0.3.0**, angular-linkify works for twitter/github mentions, twitter hashtags, and basic urls.
+**v1.2.0** introduces facebook and instagram linkification.
 
 ## Install
 
