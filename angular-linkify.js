@@ -47,9 +47,8 @@ angular.module('linkify')
                 case 'twitter':
                     _text = _text.replace(/(|\s)*@([\u00C0-\u1FFF\w]+)/g, '$1<a href="https://mobile.twitter.com/$2" target="_blank">@$2</a>');
                     _text = _text.replace(/(^|\s)*#([\u00C0-\u1FFF\w]+)/g, function ($1, $2, $3) {
-                        return $2 + '<a href="https://mobile.twitter.com/search?q=' + encodeURIComponent('#' + $3) + '" target="_blank">#' + $3 + '</a>';
+                        return ($2 ? $2 : '') + '<a href="https://mobile.twitter.com/search?q=' + encodeURIComponent('#' + $3) + '" target="_blank">#' + $3 + '</a>';
                     });
-
                     break;
 
                 case 'github':
