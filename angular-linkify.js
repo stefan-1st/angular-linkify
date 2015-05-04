@@ -62,6 +62,7 @@ angular.module('linkify')
 
                 case 'instagram':
                     _text = _text.replace(/(|\s)*@([\u00C0-\u1FFF\w]+)/g, '$1<a href="https://instagram.com/$2/" target="_blank">@$2</a>');
+                    _text = _text.replace(/(^|\s)*#([\u00C0-\u1FFF\w]+)/g, '$1<a href="https://instagram.com/explore/tags/$2/" target="_blank">#$2</a>');
                     break;
             }
 
