@@ -37,22 +37,22 @@ angular.module('someModule').controller('SomeCtrl', function ($scope, linkify, $
   // Twitter
   // Must use $sce.trustAsHtml() as of Angular 1.2.x
   $scope.text = $sce.trustAsHtml(linkify.twitter(text));
-  // outputs: <a href="https://twitter.com/keebits" target="_blank">keebits</a> <a href="https://twitter.com/hashtag/keebits?src=hash">keebits</a> and <a href="http://www.keebits.de" target="_blank">www.keebits.de</a>
+  // outputs: <a href="https://twitter.com/keebits" target="_blank">@keebits</a> <a href="https://twitter.com/hashtag/keebits?src=hash">#keebits</a> and <a href="http://www.keebits.de" target="_blank">www.keebits.de</a>
   
   // Github
   // Must use $sce.trustAsHtml() as of Angular 1.2.x
   $scope.text = $sce.trustAsHtml(linkify.github(text));
-  // outputs: <a href="https://github.com/keebits" target="_blank">keebits</a> #keebits and <a href="http://www.keebits.de" target="_blank">www.keebits.de</a>
+  // outputs: <a href="https://github.com/keebits" target="_blank">@keebits</a> #keebits and <a href="http://www.keebits.de" target="_blank">www.keebits.de</a>
 
   // Facebook
   // Must use $sce.trustAsHtml() as of Angular 1.2.x
   $scope.text = $sce.trustAsHtml(linkify.facebook(text));
-  // outputs: <a href="https://www.facebook.com/keebits" target="_blank">keebits</a> <a href="https://www.facebook.com/hashtag/keebits">keebits</a> and <a href="http://www.keebits.de" target="_blank">www.keebits.de</a>
+  // outputs: <a href="https://www.facebook.com/keebits" target="_blank">@keebits</a> <a href="https://www.facebook.com/hashtag/keebits">#keebits</a> and <a href="http://www.keebits.de" target="_blank">www.keebits.de</a>
 
   // Instagram
   // Must use $sce.trustAsHtml() as of Angular 1.2.x
-  $scope.text = $sce.trustAsHtml(linkify.github(text));
-  // outputs: <a href="https://instagram.com/keebits" target="_blank">keebits</a> #keebits and <a href="http://www.keebits.de" target="_blank">www.keebits.de</a>
+  $scope.text = $sce.trustAsHtml(linkify.instagram(text));
+  // outputs: <a href="https://instagram.com/keebits" target="_blank">@keebits</a> <a href="https://instagram.com/explore/tags/keebits/">#keebits</a> and <a href="http://www.keebits.de" target="_blank">www.keebits.de</a>
   
 });
 
